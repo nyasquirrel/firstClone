@@ -1,0 +1,24 @@
+.menu {
+  background-color: $bgClr;
+  border: 2px solid $borderClr;
+  border-radius: 10px;
+  padding: 10px 15px;
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &-lnk {
+      color: $txtClr;
+      font-weight: bold;
+      display: block;
+      padding: 15px 10px;
+      text-decoration: none;
+      border-left: 1px solid transparent;
+      &:hover {
+        color: $hvrClr;
+        border-left: 1px solid $hvrClr;
+        transition-duration: 0.1s;
+      }
+    }
+  }
+}

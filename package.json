@@ -1,0 +1,42 @@
+{
+  "name": "pink.local",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.7.x",
+    "browser-sync": "^2.26.7",
+    "css-mqpacker": "^6.0.1",
+    "del": "^3.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyasquirrel/pink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyasquirrel/pink/issues"
+  },
+  "homepage": "https://github.com/nyasquirrel/pink#readme"
+}

@@ -1,0 +1,37 @@
+.footer {
+  background-color: $bgClr;
+  border-top: 1px solid $borderClr;
+  padding: 25px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__nav {
+    &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+    &-item {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-lnk {
+      color: $txtClr;
+      text-decoration: none;
+      &:hover {
+        color: $hvrClr;
+      }
+    }
+  }
+  &__copyright {
+    font-size: 14px;
+    align-self: center;
+    color: $txtGray;
+  }
+  &__profile {
+    margin-top: auto;
+  }
+}

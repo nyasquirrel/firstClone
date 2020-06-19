@@ -1,0 +1,52 @@
+.tweets {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $borderClr;
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  &__author {
+    display: flex;
+    margin-bottom: 15px;
+    &-name {
+      color: $txtClr;
+      font-weight: bold;
+      margin-right: 10px;
+      text-decoration: none;
+      &:hover {
+        color: $hvrClr;
+      }
+    }
+    &-date {
+      color: $txtGray;
+    }
+  }
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    &-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+  &__cnt {
+    padding-left: 70px;
+    margin-bottom: 20px;
+  }
+  &__img {
+    img {
+      width: 100%;
+      height: auto;
+      border: 1px solid $borderClr;
+      border-radius: 20px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.logo {
+  width: 50px;
+  height: auto;
+  &__lnk {
+    display: block;
+    outline: none;
+  }
+  &__img {
+    display: block;
+  }
+}

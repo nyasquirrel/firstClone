@@ -1,0 +1,14 @@
+.main {
+  margin-bottom: 50px;
+  &__container {
+    width: 500px;
+    margin: 0 auto;
+    background-color: $bgClr;
+    border: 1px solid $borderClr;
+    border-radius: 3px;
+  }
+  &__profile {
+    display: flex;
+    padding: 45px 0;
+  }
+}

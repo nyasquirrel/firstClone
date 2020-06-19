@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("../fonts/NotoSansJP-Regular.otf") format("otf");
+  font-weight: normal;
+ }
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("../fonts/NotoSansJP-Bold.otf") format("otf");
+  font-weight: bold;
+ }
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("../fonts/NotoSansJP-Light.otf") format("otf");
+  font-weight: light;
+ }
+
+ $bgClr: #f6f6f6;
+ $txtClr: #333333;
+ $hvrClr: #4992f1;
+ $borderClr: #e0e0e0;
+ $txtGray: #9e9e9e;
+
+* {
+  box-sizing: border-box;
+}
+body,
+.body {
+  margin: 0;
+  font-family: "NotoSansJP", sans-serif;
+  color: $txtClr;
+  &__profile {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+@import "header.scss";
+@import "logo.scss";
+@import "user.scss";
+@import "main.scss";
+@import "post.scss";
+@import "tweets.scss";
+@import "footer.scss";
+@import "menu.scss";
