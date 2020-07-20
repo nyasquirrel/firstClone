@@ -38,16 +38,7 @@
     }
   }
   &__submit {
-    color: #ffffff;
     padding: 10px 40px;
-    border: 0;
     border-radius: 20px;
-    background-color: $hvrClr;
-    font-weight: bold;
-    transition-duration: .05s;
-    &:hover {
-      transition-duration: .08s;
-      background-color: darken($hvrClr, $amount: 10);
-    }
   }
 }

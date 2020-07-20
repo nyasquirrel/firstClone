@@ -1,0 +1,73 @@
+.form {
+  flex: 1;
+  padding: 0 100px 0 50px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 400px;
+    &:last-child {
+      padding-top: 15px;
+    }
+  }
+  &__label,
+  &__title {
+    font-weight: bold;
+    padding-left: 5px;
+    margin-bottom: 5px;
+  }
+  &__title {
+    padding: 0;
+  }
+  &__input {
+    border: 2px solid $borderClr;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    &:focus {
+      border-color: $hvrClr;
+    }
+  }
+  &__submit {
+    padding: 10px 15px;
+    border-radius: 7px;
+    align-self: flex-start;
+  }
+  &__checkbox {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    &:checked+label {
+      border-color: $hvrClr;
+      transition-duration: .2s;
+      background-color: $bgClr;
+    }
+    &:checked+label::after {
+      left: 19px;
+      transition-duration: .3s;
+      border: 3px solid $hvrClr;
+      background-color: $hvrClr;
+    }
+  }
+  &__ckeck-label {
+    display: block;
+    width: 50px;
+    height: 25px;
+    border: 3px solid $borderClr;
+    border-radius: 25px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 19px;
+      height: 19px;
+      background-color: $bgClr;
+      border: 3px solid lighten($color: $hvrClr, $amount: 10);
+      border-radius: 20px;
+      transition-duration: .2s;
+    }
+  }
+}

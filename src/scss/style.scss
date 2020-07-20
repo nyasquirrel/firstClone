@@ -39,7 +39,21 @@ body,
   margin: 0 auto;
   padding: 0 10px;
 }
-
+.button {
+  color: #ffffff;
+  border: 0;
+  background-color: $hvrClr;
+  font-weight: bold;
+  transition-duration: .05s;
+  outline: none;
+  &:hover {
+    transition-duration: .08s;
+    background-color: darken($hvrClr, $amount: 10);
+  }
+}
+.disappear {
+  display: none;
+}
 
 @import "header.scss";
 @import "logo.scss";
@@ -49,3 +63,6 @@ body,
 @import "tweets.scss";
 @import "footer.scss";
 @import "menu.scss";
+@import "form.scss";
+@import "modal.scss";
+

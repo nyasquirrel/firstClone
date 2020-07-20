@@ -39,12 +39,12 @@
             </ul>
             <ul class="user__panel-list user__panel-list-sign">
               <li class="user__panel-item">
-                <a href="#" class="user__panel-lnk">
+                <a href="#sign-in" class="user__panel-lnk">
                   Войти
                 </a>
               </li>
               <li class="user__panel-item">
-                <a href="#" class="user__panel-lnk">
+                <a href="#sign-up" class="user__panel-lnk">
                   Регистрация
                 </a>
               </li>
@@ -64,7 +64,7 @@
               <label for="post-img" class="post__img">
                 <input id="post-img" type="file" class="post__input">Изображение
               </label>
-              <button type="submit" class="post__submit">
+              <button type="submit" class="button post__submit">
                 Отправить
               </button>
             </div>
@@ -161,6 +161,56 @@
       </div>
     </div>
   </footer>
+  <div class="modal disappear">
+    <div id="sign-up" class="modal__sign disappear">
+      <div class="modal__name">Регистрация</div>
+      <form action="#" class="modal__form">
+        <div class="modal__wrapper">
+          <label for="new_login" class="modal__title">Логин</label>
+          <input type="text" class="modal__input" id="new_login">
+        </div>
+        <div class="modal__wrapper">
+          <label for="new_email" class="modal__title">Почта</label>
+          <input type="text" class="modal__input" id="new_email">
+        </div>
+        <div class="modal__wrapper">
+          <label for="new_pass" class="modal__title">Пароль</label>
+          <input type="password" class="modal__input" id="new_pass">
+        </div>
+        <div class="modal__wrapper">
+          <label for="new_pass2" class="modal__title">Повторите пароль</label>
+          <input type="password" class="modal__input" id="new_pass2">
+        </div>
+        <button type="submit" class="modal__submit button">
+          Зарегистрироваться
+        </button>
+      </form>
+    </div>
+    <div id="sign-in" class="modal__sign disappear">
+      <div class="modal__name">Вход</div>
+      <form action="#" class="modal__form">
+        <div class="modal__wrapper">
+          <label for="login" class="modal__title">Логин</label>
+          <input type="text" class="modal__input" id="login">
+        </div>
+        <div class="modal__wrapper">
+          <label for="pass" class="modal__title">Пароль</label>
+          <input type="password" class="modal__input" id="pass">
+        </div>
+        <button type="submit" class="modal__submit button">
+          Войти
+        </button>
+      </form>
+
+    </div>
+    <div class="modal__x">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+
+
 
   <script src="/js/script.min.js"></script>
 </body>
