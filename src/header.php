@@ -20,9 +20,12 @@
           </a>
         </div>
         <div class="user">
-          <div class="user__avatar"></div>
-          <div class="user__panel">
-            <ul class="user__panel-list">
+
+          <?php
+          if (isset($_SESSION['user'])) {
+          ?>
+            <ul class="user__panel">
+              <div class="user__avatar"></div>
               <li class="user__panel-item">
                 <a href="/profile.php" class="user__panel-lnk">
                   Профиль
@@ -39,7 +42,11 @@
                 </a>
               </li>
             </ul>
-            <ul class="user__panel-list user__panel-list-sign">
+          <?php
+          }
+          if (!isset($_SESSION['user'])) {
+          ?>
+            <ul class="user__panel user__panel-list-sign">
               <li class="user__panel-item">
                 <a href="#sign-in" class="user__panel-lnk">
                   Войти
@@ -51,7 +58,9 @@
                 </a>
               </li>
             </ul>
-          </div>
+          <?php
+          }
+          ?>
         </div>
       </div>
     </div>

@@ -150,16 +150,12 @@ if (!isset($_SESSION['msg'])) {
     <span></span>
   </div>
 </div>
-<script src="/js/script.min.js"></script>
-</body>
 <?php
 if ($_SESSION['accepted']) {
 ?>
   <div class="modal__sign modal__accepted" id="modal_accept">
     <div class="modal__msg">
-      <?php
-      echo $_SESSION['accepted'];
-      ?>
+      Вы успешно зарегестрировались! <br> Войдите в свой <a href="#sign-in" class="modal__msg-lnk" onclick="openSingIn()">аккаунт.</a>
     </div>
   </div>
 <?php
@@ -167,5 +163,8 @@ if ($_SESSION['accepted']) {
 unset($_SESSION['msg']);
 unset($_SESSION['accepted']);
 ?>
+<script src="/js/script.min.js"></script>
+</body>
+
 
 </html>

@@ -51,7 +51,17 @@ modalSign.forEach(item => {
 setTimeout(() => {
   let modalAccept = document.querySelector('#modal_accept');
   modalAccept.classList.add('animation__disappear');
-}, 1600);
+  setTimeout(() => {
+    modalAccept.remove()
+  }, 650);
+}, 4500);
+
+function openSingIn() {
+  let modalAccept = document.querySelector('#modal_accept');
+  modalAccept.remove();
+  modal.classList.remove('disappear');
+  document.querySelector('#sign-in').classList.remove('disappear');
+}
 
 let signLinks = document.querySelectorAll('.user__panel-list-sign a');
 signLinks.forEach(item =>

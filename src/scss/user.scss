@@ -3,22 +3,22 @@
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
+  min-width: 180px;
   &__avatar {
     width: 50px;
     height: 50px;
     border-radius: 100%;
     background: #ffffff url('../img/avatar.jpg') top center/contain no-repeat;
+    margin-right: 20px;
   }
   &__panel {
-    margin-left: 25px;
-    &-list {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     &-item {
       margin-right: 10px;
       &:last-child {

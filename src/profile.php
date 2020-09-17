@@ -1,6 +1,6 @@
 <?php
 session_start();
-$page_title = 'Мой клон';
+$page_title = 'Профиль';
 include('header.php');
 ?>
 <main class="main">

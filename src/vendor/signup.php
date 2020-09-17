@@ -21,13 +21,15 @@ if (!empty(trim($_POST['email']))) {
   fail('Введите почтовый адрес');
 }
 
-if (!empty(trim($password = $_POST['password']))) {
-  $password = md5($_POST['password']);
-} else {
+if (empty($_POST['password'])) {
   fail('Заполните поле пароля');
+} elseif (strlen($_POST['password']) <= 5) {
+  fail('Пароль должен быть длинее 5 символов');
+} else {
+  $password = md5($_POST['password']);
 }
 
-if (!empty(trim($_POST['password_confirm']))) {
+if (!empty($_POST['password_confirm'])) {
   $password_confirm = md5($_POST['password_confirm']);
 } else {
   fail('Заполните поле проверочного пароля');
@@ -48,7 +50,7 @@ if (mysqli_num_rows($check_email) > 0) {
 $reg = mysqli_query($connect, "INSERT INTO users (login, password, email) values ('$login', '$password', '$email')");
 
 if ($reg) {
-  $_SESSION['accepted'] = 'Вы успешно зарегестрировались!';
+  $_SESSION['accepted'] = true;
   mysqli_close($connect);
   header('Location: /');
 }
