@@ -25,6 +25,7 @@ profileLinks.forEach(item => {
 let modal = document.querySelector('.modal');
 let modalClose = document.querySelector('.modal__x');
 let modalSign = document.querySelectorAll('.modal__sign');
+let modalWarning = document.querySelector('.modal__warning');
 
 modal.addEventListener('mouseover', () => modalClose.classList.add('modal__x--hovered'));
 modal.addEventListener('mouseout', () => modalClose.classList.remove('modal__x--hovered'))
@@ -33,12 +34,24 @@ modal.addEventListener('click', () => {
   modal.classList.add('disappear');
   modalSign.forEach(item => item.classList.add('disappear'));
   document.body.style.overflow = '';
+  if (modalWarning.classList.contains('animation__disappear')) {
+    modalWarning.remove()
+  } else {
+    setTimeout(() => {
+      modalWarning.classList.add('animation__disappear');
+    }, 1300);
+  }
 });
 
 modalSign.forEach(item => {
   item.addEventListener('mouseover', (e) => e.stopPropagation());
   item.addEventListener('click', (e) => e.stopPropagation());
 })
+
+setTimeout(() => {
+  let modalAccept = document.querySelector('#modal_accept');
+  modalAccept.classList.add('animation__disappear');
+}, 1600);
 
 let signLinks = document.querySelectorAll('.user__panel-list-sign a');
 signLinks.forEach(item =>
@@ -52,4 +65,5 @@ signLinks.forEach(item =>
     document.body.style.overflow = 'hidden';
   })
 )
+
 

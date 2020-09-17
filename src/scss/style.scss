@@ -54,6 +54,13 @@ body,
 .disappear {
   display: none;
 }
+.animation {
+  &__disappear {
+    opacity: 0;
+    transform: scaleY(0);
+    transition-duration: .45s;
+  }
+}
 
 @import "header.scss";
 @import "logo.scss";
