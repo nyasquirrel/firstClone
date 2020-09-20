@@ -19,25 +19,33 @@
             <img src="img/logo.png" alt="Логотип" class="logo__img" width="50" height="50">
           </a>
         </div>
+        <?php
+        print_r($_SESSION['user']['avatar'] != NULL);
+        ?>
         <div class="user">
 
           <?php
           if (isset($_SESSION['user'])) {
           ?>
             <ul class="user__panel">
-              <div class="user__avatar"></div>
+              <div class="user__avatar" <?php
+                                        if ($_SESSION['user']['avatar'] != NULL) {
+                                          echo 'style="background-image: url(\'' . $_SESSION['user']['avatar'] . '\');"';
+                                        }
+                                        ?>>
+              </div>
               <li class="user__panel-item">
-                <a href="/profile.php" class="user__panel-lnk">
+                <a href="#" class="user__panel-lnk">
                   Профиль
                 </a>
               </li>
               <li class="user__panel-item">
-                <a href=#"" class="user__panel-lnk">
+                <a href="/settings.php" class="user__panel-lnk">
                   Настройки
                 </a>
               </li>
               <li class="user__panel-item">
-                <a href="#" class="user__panel-lnk">
+                <a href="/vendor/logout.php" class="user__panel-lnk">
                   Выйти
                 </a>
               </li>

@@ -26,7 +26,7 @@ include('header.php');
         </ul>
       </div>
       <div class="form">
-        <form id="info">
+        <form id="info" action="/vendor/edit_user_info.php" enctype="multipart/form-data" method="POST">
           <div class="form__wrapper">
             <label for="name" class="form__label">Имя</label>
             <input type="text" placeholder="Имя" name="name" id="name" class="form__input">
@@ -36,13 +36,15 @@ include('header.php');
             <input type="text" placeholder="Логин" name="login" id="login" class="form__input">
           </div>
           <div class="form__wrapper">
-            <label for="pass" class="form__label">Пароль</label>
-            <input type="password" placeholder="Пароль" name="pass" id="pass" class="form__input">
+            <span class="form__title">Аватар</span>
+            <label for="avatar" class="form__file form__btn-dowload">
+              Загрузить
+            </label>
+            <input type="file" placeholder="Логин" name="avatar" id="avatar">
           </div>
           <div class="form__wrapper">
             <label for="email" class="form__label">Почта</label>
-            <input type="text
-              " placeholder="Почта" name="email" id="email" class="form__input">
+            <input type="text" placeholder="Почта" name="email" id="email" class="form__input">
           </div>
           <div class="form__wrapper">
             <label for="gender" class="form__label">Пол</label>
@@ -54,6 +56,10 @@ include('header.php');
           <div class="form__wrapper">
             <label for="dob" class="form__label">Дата рождения</label>
             <input type="date" placeholder="Дата рождения" min="1950-01-01" name="dob" id="dob" class="form__input">
+          </div>
+          <div class="form__wrapper">
+            <label for="pass" class="form__label">Пароль</label>
+            <input type="password" placeholder="Пароль" name="pass" id="pass" class="form__input">
           </div>
           <div class="form__wrapper">
             <button type="submit" class="button form__submit">Сохранить</button>

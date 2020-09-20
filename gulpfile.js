@@ -15,7 +15,7 @@ const jsmin = require('gulp-jsmin');
 const del = require("del");
 
 gulp.task("clean", function () {
-	return del("build");
+	return del(["build/*", "!build/uploads"]);
 });
 
 gulp.task("copy", function () {

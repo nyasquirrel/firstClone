@@ -89,14 +89,14 @@ include('footer.php');
 ?>
 <div class="modal 
 <?php
-if (!isset($_SESSION['msg'])) {
+if (!(isset($_SESSION['msg_signup']) || isset($_SESSION['msg_signin']))) {
   echo 'disappear';
 }
 ?>
 ">
   <div id="sign-up" class="modal__sign 
   <?php
-  if (!isset($_SESSION['msg'])) {
+  if (!isset($_SESSION['msg_signup'])) {
     echo 'disappear';
   }
   ?>">
@@ -119,8 +119,8 @@ if (!isset($_SESSION['msg'])) {
         <input type="password" class="modal__input" id="new_pass2" name="password_confirm">
       </div>
       <?php
-      if (isset($_SESSION['msg'])) {
-        echo '<div class="modal__warning">' . $_SESSION['msg'] . '</div>';
+      if (isset($_SESSION['msg_signup'])) {
+        echo '<div class="modal__warning">' . $_SESSION['msg_signup'] . '</div>';
       }
       ?>
       <button type="submit" class="modal__submit button">
@@ -128,17 +128,27 @@ if (!isset($_SESSION['msg'])) {
       </button>
     </form>
   </div>
-  <div id="sign-in" class="modal__sign disappear">
+  <div id="sign-in" class="modal__sign 
+  <?php
+  if (!isset($_SESSION['msg_signin'])) {
+    echo 'disappear';
+  }
+  ?>">
     <div class="modal__name">Вход</div>
-    <form action="#" class="modal__form">
+    <form action="vendor/signin.php" class="modal__form" method="post">
       <div class="modal__wrapper">
         <label for="login" class="modal__title">Логин</label>
-        <input type="text" class="modal__input" id="login">
+        <input type="text" class="modal__input" id="login" name="login">
       </div>
       <div class="modal__wrapper">
         <label for="pass" class="modal__title">Пароль</label>
-        <input type="password" class="modal__input" id="pass">
+        <input type="password" class="modal__input" id="pass" name="password">
       </div>
+      <?php
+      if (isset($_SESSION['msg_signin'])) {
+        echo '<div class="modal__warning">' . $_SESSION['msg_signin'] . '</div>';
+      }
+      ?>
       <button type="submit" class="modal__submit button">
         Войти
       </button>
@@ -155,12 +165,13 @@ if ($_SESSION['accepted']) {
 ?>
   <div class="modal__sign modal__accepted" id="modal_accept">
     <div class="modal__msg">
-      Вы успешно зарегестрировались! <br> Войдите в свой <a href="#sign-in" class="modal__msg-lnk" onclick="openSingIn()">аккаунт.</a>
+      Вы успешно зарегестрировались! <br> Войдите в свой <a href="#sign-in" class="modal__msg-lnk" onclick="openSingIn()">аккаунт</a>.
     </div>
   </div>
 <?php
 }
-unset($_SESSION['msg']);
+unset($_SESSION['msg_signup']);
+unset($_SESSION['msg_signin']);
 unset($_SESSION['accepted']);
 ?>
 <script src="/js/script.min.js"></script>

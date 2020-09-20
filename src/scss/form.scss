@@ -16,6 +16,28 @@
     padding-left: 5px;
     margin-bottom: 5px;
   }
+  &__file {
+    &+input {
+      width: 0;
+      height: 0;
+    }
+  }
+  &__btn-dowload {
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 10px;
+    margin-top: 5px;
+    border: 3px dashed $borderClr;
+    border-radius: 5px;
+    transition-duration: .05s;
+    &:hover {
+      border: 3px solid $hvrClr;
+      color: $hvrClr;
+      transition-duration: .13s;
+    }
+  }
   &__title {
     padding: 0;
   }
