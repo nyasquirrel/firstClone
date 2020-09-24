@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location: /');
+}
 $page_title = 'Профиль';
 include('header.php');
 ?>
@@ -40,7 +43,12 @@ include('header.php');
             <label for="avatar" class="form__file form__btn-dowload">
               Загрузить
             </label>
-            <input type="file" placeholder="Логин" name="avatar" id="avatar">
+            <input type="file" accept=".jpg, .jpeg, .png" placeholder="Логин" name="avatar" id="avatar">
+            <?php
+            if ($_SESSION['error_update_profile']['avatar']) {
+              echo '<div class="form__avatar-fail">' . $_SESSION['error_update_profile']['avatar'] . '</div>';
+            }
+            ?>
           </div>
           <div class="form__wrapper">
             <label for="email" class="form__label">Почта</label>
@@ -49,18 +57,35 @@ include('header.php');
           <div class="form__wrapper">
             <label for="gender" class="form__label">Пол</label>
             <select name="gender" id="gender" class="form__input">
-              <option value="male">Мужчина</option>
-              <option value="female">Женщина</option>
+              <option value="male" <?php
+                                    if ($_SESSION['user']['gender'] == 'male') echo 'selected';
+                                    ?>>
+                Мужчина</option>
+              <option value="female" <?php
+                                      if ($_SESSION['user']['gender'] == 'female') echo 'selected';
+                                      ?>>
+                Женщина</option>
             </select>
           </div>
           <div class="form__wrapper">
-            <label for="dob" class="form__label">Дата рождения</label>
-            <input type="date" placeholder="Дата рождения" min="1950-01-01" name="dob" id="dob" class="form__input">
+            <label for="b_day" class="form__label">Дата рождения</label>
+            <input type="date" placeholder="Дата рождения" min="1950-01-01" name="b_day" id="dob" class="form__input">
           </div>
           <div class="form__wrapper">
             <label for="pass" class="form__label">Пароль</label>
             <input type="password" placeholder="Пароль" name="pass" id="pass" class="form__input">
           </div>
+          <?php
+          if (isset($_SESSION['error_update_profile'])) {
+            echo '<div class="form__error">' . $_SESSION['error_update_profile']['msg'];
+            for ($i = 0; $i < (count($_SESSION['error_update_profile']['fields']) - 1); $i++) {
+              echo '<span style="text-decoration: underline;">' . $_SESSION['error_update_profile']['fields'][$i] . '</span>, ';
+            }
+            echo '<span style="text-decoration: underline;">' . $_SESSION['error_update_profile']['fields'][$i] . '</span></div>';
+          }
+
+
+          ?>
           <div class="form__wrapper">
             <button type="submit" class="button form__submit">Сохранить</button>
           </div>
@@ -183,7 +208,9 @@ include('header.php');
 </div>
 <script src="/js/script.min.js"></script>
 
-
+<?php
+unset($_SESSION['error_update_profile'])
+?>
 </body>
 
 

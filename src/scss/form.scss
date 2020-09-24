@@ -4,7 +4,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 400px;
     &:last-child {
       padding-top: 15px;
@@ -91,5 +91,19 @@
       border-radius: 20px;
       transition-duration: .2s;
     }
+  }
+  &__error,
+  &__avatar-fail {
+    font-size: 14px;
+    font-weight: bold;
+    width: 400px;
+    border: 3px solid $hvrClr;
+    border-radius: 7px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__avatar-fail {
+    margin-top: 10px;
   }
 }

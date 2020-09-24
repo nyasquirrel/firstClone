@@ -11,6 +11,11 @@
 </head>
 
 <body>
+  <pre>
+    <?php
+    print_r($_SESSION);
+    ?>
+  </pre>
   <header class="header">
     <div class="container">
       <div class="header__inner">
@@ -19,9 +24,6 @@
             <img src="img/logo.png" alt="Логотип" class="logo__img" width="50" height="50">
           </a>
         </div>
-        <?php
-        print_r($_SESSION['user']['avatar'] != NULL);
-        ?>
         <div class="user">
 
           <?php

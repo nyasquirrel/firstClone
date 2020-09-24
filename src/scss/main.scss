@@ -1,5 +1,6 @@
 .main {
   margin-bottom: 50px;
+  min-height: calc(100vh - 250px);
   &__container {
     width: 500px;
     margin: 0 auto;
